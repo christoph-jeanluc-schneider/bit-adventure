@@ -6,5 +6,5 @@ Visit [abelade.ch](https://abelade.ch) to see the game action.
 
 ## License
 
-Bit Adventure (abelade.ch) is published under the term of the [ICS License](https://github.com/christoph-jeanluc-schneider/bit-adventure#LICENSE).  
+Bit Adventure (abelade.ch) is published under the term of the [ICS License](https://github.com/christoph-jeanluc-schneider/bit-adventure/blob/main/LICENSE).  
 Get a easy explenation on [choosealicense.com/licenses/isc](https://choosealicense.com/licenses/isc/).
