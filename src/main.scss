@@ -1,13 +1,8 @@
 @import url(../node_modules/modern-normalize/modern-normalize.css);
 
-.font-mono {
-	font-family: 'VT323', 'Courier New', Courier, monospace;
-}
-
-.font-serif {
-	font-family: 'Source Serif Pro', Georgia, 'Times New Roman', Times, serif;
-}
-
-.font-sans {
-	font-family: 'Poppins', 'Comic Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+:root {
+	--blue: #00a7a1;
+	--creme: #ffe8bc;
+	font-family: 'Roboto Flex', sans-serif;
+	font-weight: 400;
 }

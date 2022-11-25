@@ -7,6 +7,7 @@
 
 <style lang="scss">
 	h1 {
-		font-size: 4rem;
+		font-size: 2rem;
+		font-weight: 600;
 	}
 </style>
