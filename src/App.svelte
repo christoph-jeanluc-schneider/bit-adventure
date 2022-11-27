@@ -1,24 +1,18 @@
 <script lang="ts">
-	import Menu from './lib/components/Menu.svelte';
 	import { state } from './lib/store';
+	import State0 from './states/0.svelte';
+	import State1 from './states/1.svelte';
+
+	const states = [State0, State1];
+
+	function ctxmenu(ev: MouseEvent) {
+		if (ev.ctrlKey) {
+			ev.preventDefault();
+			state.set(Number(prompt('set state to:', '0')) || 0);
+		}
+	}
 </script>
 
-<main>
-	<Menu />
-	<h1>Abelade.ch</h1>
-	<p>State: {$state}</p>
-	<div>
-		<button
-			on:click={() => {
-				$state += 1;
-			}}>state go brr</button
-		>
-	</div>
-</main>
+<svelte:window on:contextmenu={ctxmenu} />
 
-<style lang="scss">
-	h1 {
-		font-size: 2rem;
-		font-weight: 600;
-	}
-</style>
+<svelte:component this={states[$state]} />

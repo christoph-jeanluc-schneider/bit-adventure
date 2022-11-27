@@ -9,3 +9,7 @@ state.subscribe(($state) => localStorage.setItem(LS_STATE, $state.toString()));
 export function reset() {
 	state.set(0);
 }
+
+export function next() {
+	state.update((s) => s + 1);
+}
