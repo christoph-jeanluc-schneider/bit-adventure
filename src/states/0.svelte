@@ -8,11 +8,15 @@
 		easing: 'easeOutCubic',
 		complete: () => {
 			completed = true;
+			setTimeout(() => {
+				showHidden = true;
+			}, 5000);
 		},
 	});
 	let button: any;
 	const p = { x: 0, y: 0 };
 	let completed = false;
+	let showHidden = false;
 
 	onMount(() => {
 		timeline
@@ -61,7 +65,7 @@
 			<button class="fake" bind:this={button}>okey lets go!</button>
 		</div>
 		<div>
-			<button class="hidden" on:click={onclick} disabled={!completed}>okey lets go!</button>
+			<button class="hidden" on:click={onclick} disabled={!completed} data-hint={showHidden}>okey lets go!</button>
 		</div>
 	</section>
 </main>
@@ -118,6 +122,10 @@
 
 				&.hidden {
 					transform: translateY(-100%);
+
+					&[data-hint="true"] {
+						opacity: 0.02;
+					}
 
 					&:not(:disabled):hover {
 						cursor: pointer;
