@@ -6,33 +6,31 @@
 	const timeline = anime.timeline({
 		delay: 1000,
 		easing: 'easeOutCubic',
-		complete: () => {
-			completed = true;
-			setTimeout(() => {
-				showHidden = true;
-			}, 5000);
-		},
 	});
 	let button: any;
 	const p = { x: 0, y: 0 };
-	let completed = false;
+	let enableButtonMove = false;
 	let showHidden = false;
 
 	onMount(() => {
 		timeline
-			.add({ targets: '.abelade', opacity: 1, translateY: -80, duration: 2000 })
-			.add({ targets: '.info1', opacity: 1, translateY: -50, duration: 2000, delay: 1000 })
-			.add({ targets: '.info2', opacity: 1, translateY: -50, duration: 2000, delay: 1000 })
-			.add({
-				targets: '.fake',
-				opacity: 1,
-				duration: 500,
-				delay: 1500,
-			});
+			.add({ targets: '.abelade', opacity: 1, translateY: -80, duration: 800 })
+			.add({ targets: '.info1', opacity: 1, translateY: -50, duration: 800 })
+			.add({ targets: '.info2', opacity: 1, translateY: -50, duration: 800 })
+			.add({ targets: '.fake', opacity: 1, duration: 200 });
 	});
 
+	function checkEnableButtonMove() {
+		if (timeline.completed && !enableButtonMove) {
+			enableButtonMove = true;
+			setTimeout(() => {
+				showHidden = true;
+			}, 2000);
+		}
+	}
+
 	function moveButton(ev: MouseEvent) {
-		if (timeline.completed) {
+		if (enableButtonMove && timeline.completed) {
 			p.x += ev.movementX;
 			p.y += ev.movementY;
 			button.style.top = p.y + 'px';
@@ -44,7 +42,7 @@
 		const animation = anime({
 			targets: '.section',
 			opacity: 0,
-			duration: 1000,
+			duration: 0/* 200 */,
 			easing: 'easeInCubic',
 		});
 		animation.finished.then(next);
@@ -54,7 +52,7 @@
 <svelte:window on:mousemove={moveButton} />
 
 <main>
-	<section class="section">
+	<section class="section" on:mouseenter={checkEnableButtonMove}>
 		<h1 class="abelade">abelade.ch</h1>
 		<h4 class="info1">alles wos im internet je het gä</h4>
 		<h4 class="info2">chame hie abelade</h4>
@@ -65,7 +63,7 @@
 			<button class="fake" bind:this={button}>okey lets go!</button>
 		</div>
 		<div>
-			<button class="hidden" on:click={onclick} disabled={!completed} data-hint={showHidden}>okey lets go!</button>
+			<button class="hidden" on:click={onclick} disabled={!showHidden}>okey lets go!</button>
 		</div>
 	</section>
 </main>
@@ -76,22 +74,19 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		overflow: hidden;
 
 		section {
 			position: relative;
 			top: -10vh;
 			text-align: center;
+			padding: 8rem;
 
 			h1 {
-				cursor: pointer;
 				font-weight: 400;
 				font-size: 6rem;
 				transition: color 0.2s;
 				opacity: 0;
-
-				&:hover {
-					color: hsl(330, 77%, 41%);
-				}
 			}
 
 			h4 {
@@ -102,34 +97,45 @@
 			}
 
 			button {
+				position: relative;
+				top: 0;
 				outline: none;
 				padding: 1rem 1.5rem;
 				font-weight: 600;
 				border: none;
 				border-radius: 0.5rem;
-				background-color: hsl(330, 77%, 51%);
 				color: white;
+				background-color: hsl(330, 77%, 51%);
 				box-shadow: 0 0.25rem hsl(330, 77%, 41%);
-				opacity: 0;
-				transition: opacity 0.2s, transform 0.2s;
 
 				&.fake {
 					pointer-events: none;
 					position: relative;
 					top: 0;
 					left: 0;
+					opacity: 0;
+					background-color: hsl(330, 77%, 51%);
+					box-shadow: 0 0.25rem hsl(330, 77%, 41%);
 				}
 
 				&.hidden {
+					background-color: hsl(128, 64%, 45%);
+					box-shadow: 0 0.25rem hsl(128, 64%, 35%);
+					cursor: pointer;
 					transform: translateY(-100%);
+					transition: all 100ms;
 
-					&[data-hint="true"] {
-						opacity: 0.02;
+					&:hover {
+						background-color: hsl(128, 64%, 50%);
 					}
 
-					&:not(:disabled):hover {
-						cursor: pointer;
-						opacity: 1;
+					&:active {
+						top: 0.25rem;
+						box-shadow: 0 0 hsl(128, 64%, 35%);
+					}
+
+					&:disabled {
+						opacity: 0;
 					}
 				}
 			}
