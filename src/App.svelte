@@ -7,8 +7,9 @@
 	import State4 from './states/4.svelte';
 	import State5 from './states/5.svelte';
 	import State6 from './states/6.svelte';
+	import State7 from './states/7.svelte';
 
-	const states = [State0, State1, State2, State3, State4, State5, State6];
+	const states = [State0, State1, State2, State3, State4, State5, State6, State7];
 
 	function ctxmenu(ev: MouseEvent) {
 		if (ev.ctrlKey) {

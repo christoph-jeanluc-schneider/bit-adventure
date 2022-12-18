@@ -14,6 +14,8 @@
 	const { push, text } = terminal();
 
 	onMount(async () => {
+		await wait(1000);
+
 		for (let i = 0; i < 60; i++) {
 			await push(`[FATAL] system error at 0x${randomAddress()}\n`, false);
 			await wait(10);

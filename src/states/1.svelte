@@ -11,9 +11,9 @@
 
 	onMount(() => {
 		timeline
-			.add({ targets: '.main', 'background-color': '#ff0000', duration: 100 })
-			.add({ targets: '.main', 'background-color': '#008000', duration: 100 })
-			.add({ targets: '.main', 'background-color': '#0059ff', duration: 100 })
+			.add({ targets: '.main', 'background-color': '#000000', duration: 100 })
+			.add({ targets: '.main', 'background-color': '#00b800', duration: 100 })
+			.add({ targets: '.main', 'background-color': '#ffffff', duration: 100 })
 			.add({ targets: '.main', 'background-color': '#000000', duration: 100 });
 	});
 </script>
