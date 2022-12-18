@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { next } from '../lib/store';
+	import { next } from '../../lib/store';
 </script>
 
 <main>

@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { next } from '../lib/store';
-	import terminal from '../lib/terminal';
-	import wait from '../lib/wait';
+	import { next } from '../../lib/store';
+	import terminal from '../../lib/terminal';
+	import wait from '../../lib/wait';
 
 	const chars = '0123456789abcdef';
 	function randomAddress() {

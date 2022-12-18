@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { next } from '../lib/store';
-	import terminal from '../lib/terminal';
-	import wait from '../lib/wait';
+	import { next } from '../../lib/store';
+	import terminal from '../../lib/terminal';
+	import wait from '../../lib/wait';
 
 	const textItems = [
 		['[ERROR] system error (0xe8f2a8983)', 0, true],

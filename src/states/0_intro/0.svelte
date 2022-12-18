@@ -1,7 +1,7 @@
 <script lang="ts">
 	import anime from 'animejs';
 	import { onMount } from 'svelte';
-	import { next } from '../lib/store';
+	import { next } from '../../lib/store';
 
 	const timeline = anime.timeline({
 		delay: 1000,

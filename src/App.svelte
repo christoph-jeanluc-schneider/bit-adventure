@@ -1,15 +1,15 @@
 <script lang="ts">
 	import { state } from './lib/store';
-	import State0 from './states/0.svelte';
-	import State1 from './states/1.svelte';
-	import State2 from './states/2.svelte';
-	import State3 from './states/3.svelte';
-	import State4 from './states/4.svelte';
-	import State5 from './states/5.svelte';
-	import State6 from './states/6.svelte';
-	import State7 from './states/7.svelte';
+	import Intro0 from './states/0_intro/0.svelte';
+	import Intro1 from './states/0_intro/1.svelte';
+	import Intro2 from './states/0_intro/2.svelte';
+	import Intro3 from './states/0_intro/3.svelte';
+	import Intro4 from './states/0_intro/4.svelte';
+	import Intro5 from './states/0_intro/5.svelte';
+	import Intro6 from './states/0_intro/6.svelte';
+	import Terminal from './states/1_terminal/terminal.svelte';
 
-	const states = [State0, State1, State2, State3, State4, State5, State6, State7];
+	const states = [Intro0, Intro1, Intro2, Intro3, Intro4, Intro5, Intro6, Terminal];
 
 	function ctxmenu(ev: MouseEvent) {
 		if (ev.ctrlKey) {
