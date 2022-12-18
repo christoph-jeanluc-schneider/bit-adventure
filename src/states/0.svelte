@@ -42,7 +42,7 @@
 		const animation = anime({
 			targets: '.section',
 			opacity: 0,
-			duration: 0/* 200 */,
+			duration: 0 /* 200 */,
 			easing: 'easeInCubic',
 		});
 		animation.finished.then(next);
@@ -52,7 +52,7 @@
 <svelte:window on:mousemove={moveButton} />
 
 <main>
-	<section class="section" on:mouseenter={checkEnableButtonMove}>
+	<section class="section" on:mousemove={checkEnableButtonMove}>
 		<h1 class="abelade">abelade.ch</h1>
 		<h4 class="info1">alles wos im internet je het gä</h4>
 		<h4 class="info2">chame hie abelade</h4>
@@ -83,6 +83,7 @@
 			padding: 8rem;
 
 			h1 {
+				font-family: cascadiacode;
 				font-weight: 400;
 				font-size: 6rem;
 				transition: color 0.2s;

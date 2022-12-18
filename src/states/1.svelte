@@ -6,21 +6,20 @@
 	const timeline = anime.timeline({
 		delay: 0,
 		easing: 'easeOutCubic',
+		complete: next
 	});
 
 	onMount(() => {
-		console.log("foo");
-
 		timeline
-			.add({ targets: '.alles', 'background-color': 'red', duration: 100 })
-			.add({ targets: '.alles', 'background-color': 'green', duration: 100 })
-			.add({ targets: '.alles', 'background-color': 'blue', duration: 100 })
-			.add({ targets: '.alles', 'background-color': 'black', duration: 100 });
+			.add({ targets: '.main', 'background-color': '#ff0000', duration: 100 })
+			.add({ targets: '.main', 'background-color': '#008000', duration: 100 })
+			.add({ targets: '.main', 'background-color': '#0059ff', duration: 100 })
+			.add({ targets: '.main', 'background-color': '#000000', duration: 100 });
 	});
 </script>
 
-<main class="alles">
-	foo bar
+<main class="main">
+	&nbsp;
 </main>
 
 <style lang="scss">

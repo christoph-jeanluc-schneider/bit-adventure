@@ -1,5 +1,10 @@
 @import url(../node_modules/modern-normalize/modern-normalize.css);
 
+@font-face {
+	font-family: cascadiacode;
+	src: url('/CascadiaCode.woff2');
+}
+
 :root {
 	--blue: #00a7a1;
 	--creme: #ffe8bc;
