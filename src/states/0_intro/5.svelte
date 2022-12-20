@@ -17,6 +17,7 @@
 		{ txt: "\nDu heschs glöschä", ms: 1000 },
 		{ txt: ", alles", ms: 1000 },
 		{ txt: ", s'ganzä Internet!", ms: 1000 },
+		{ txt: " DU SACK :/", ms: 1000 },
 		{ txt: '\n', ms: 2000 },
 		{ txt: 'was mache mir jetzt?', ms: 2000 },
 		{ txt: '  o.o', ms: 2000 },
